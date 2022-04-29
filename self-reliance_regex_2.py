@@ -7,7 +7,10 @@ import os
 fh =open('emerson_self-reliance.txt')
 os.system("cls")
 
-
+for line in fh:
+    
+    if re.findall() in line:
+        print(line)
 # Match both "lives" and "lived"
 # Match "virtue" but not "virtues"
 # Match the numbers and periods on all numbered paragraphs
