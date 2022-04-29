@@ -6,13 +6,19 @@ import os
 
 fh =open('emerson_self-reliance.txt')
 os.system("cls")
-
+count = 0
 for line in fh:
-    
-    if re.findall() in line:
-        print(line)
-# Match both "lives" and "lived"
+    count +=1
+# Match both "lives" and "lived" 
+    if re.search("live[a-z]", line):
+        print ("Treffer für lives oder lived in Zeile:", count)
+        #print(line)
 # Match "virtue" but not "virtues"
+    if re.search("virtue[^a-z]", line):
+        print ("Treffer für virtue in Zeile:", count)
 # Match the numbers and periods on all numbered paragraphs
-# Find the 16-Character word taht starts with "c"
 
+# Find the 16-Character word thatt starts with "c"
+    if re.search("c.\S{15}", line):
+        print ("Treffer für 16-stelliges Wort, das mit c beginnt in Zeile:", count)
+        print (re.findall("c.\S{15}", line))
