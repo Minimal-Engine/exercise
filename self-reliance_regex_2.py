@@ -10,15 +10,17 @@ count = 0
 for line in fh:
     count +=1
 # Match both "lives" and "lived" 
-    if re.search("live[a-z]", line):
+    if re.search("live[sd]", line):
         print ("Treffer für lives oder lived in Zeile:", count)
         #print(line)
 # Match "virtue" but not "virtues"
-    if re.search("virtue[^a-z]", line):
+    if re.search("virtue[^s]", line):
         print ("Treffer für virtue in Zeile:", count)
 # Match the numbers and periods on all numbered paragraphs
-
+    if re.search("\d\.", line):
+        print ("Treffer für Zahl mit anschließendem Punkt in Zeile:", count)
+        print (re.findall("\d\.", line))
 # Find the 16-Character word thatt starts with "c"
-    if re.search("c.\S{15}", line):
+    if re.search("c\w{15}", line):
         print ("Treffer für 16-stelliges Wort, das mit c beginnt in Zeile:", count)
-        print (re.findall("c.\S{15}", line))
+        print (re.findall("c\w{15}", line))
